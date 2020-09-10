@@ -6,6 +6,6 @@ class FirstController < ApplicationController
     render 'first/hello'
   end
   def hi
-    render 'first/hi'
+    render template: 'first/hi', layout: 'application'
   end
 end
