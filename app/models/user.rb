@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   validates_format_of :email, with: /.+@.+/, if: :email
   validates_length_of :password, minimum: 6, on: [:create], if: :password
+
+  after_create :send_welcome_email
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_now
+  end
 end
