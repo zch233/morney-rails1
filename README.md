@@ -25,3 +25,8 @@ bin/rails g model User email:string password_digest:string
 ```
 bin/rails s
 ```
+
+## 创建 controller
+```
+bin/rails g controller users
+```
