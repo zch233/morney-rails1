@@ -11,11 +11,16 @@ bin/rails -T
 bin/rails db:create
 bin/rails db:drop
 ```
+## 数据迁移，创建User 表
+```
+bin/rails db:migrate
+```
 ## 使用 rails 创建表
 ```
 bin/rails g model User
 bin/rails g model User email:string password_digest:string
 ```
+
 ## 运行
 ```
 bin/rails s
