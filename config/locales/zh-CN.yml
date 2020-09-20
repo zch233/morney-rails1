@@ -12,3 +12,4 @@ zh-CN:
               invalid: 邮箱格式不合法
             password_confirmation:
               blank: 确认密码不能为空
+              confirmation: 两次密码不匹配
