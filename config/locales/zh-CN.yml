@@ -10,6 +10,7 @@ zh-CN:
             email:
               blank: 邮箱不能为空
               invalid: 邮箱格式不合法
+              taken: 邮箱已被注册
             password_confirmation:
               blank: 确认密码不能为空
               confirmation: 两次密码不匹配
