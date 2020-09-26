@@ -6,7 +6,7 @@ class Session
   validate :check_email_present, if: :email
   validates_format_of :email, with: /.+@.+/, if: :email
   validates_length_of :password, minimum: 6, if: :password
-  validate :check_email_password_match
+  validate :check_email_password_match, if: Proc.new {|s| s.email.present? and s.password.present?}
 
   def check_email_present
     user ||= User.find_by_email email

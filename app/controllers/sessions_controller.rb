@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    session = Session.new create_params
-    session.validate
-    render_resource session
+    s = Session.new create_params
+    s.validate
+    render_resource s
   end
   def destroy
 
