@@ -9,15 +9,15 @@ class Session
   validate :check_email_password_match, if: Proc.new {|s| s.email.present? and s.password.present?}
 
   def check_email_present
-    user ||= User.find_by_email email
-    if user.nil?
+    @user ||= User.find_by_email email
+    if @user.nil?
       errors.add :email, :not_present
     end
   end
 
   def check_email_password_match
-    user ||= User.find_by_email email
-    if user and not user.authenticate(password)
+    @user ||= User.find_by_email email
+    if @user and not @user.authenticate(password)
       errors.add :password, :not_match
     end
   end
