@@ -2,10 +2,8 @@ class UsersController < ApplicationController
   def create
     render_resource User.create create_params
   end
-  def current_user
-    @user_id = session[:current_user_id]
-    @user = User.find_by_id @user_id
-    render_resource @user
+  def current_user_info
+    render_resource current_user
   end
 
   def create_params

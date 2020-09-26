@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/hello', to: 'first#hello'
   get '/hi', to: 'first#hi'
-  get '/current_user', to: 'users#current_user'
+  get '/current_user_info', to: 'users#current_user_info'
   # get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#show'
   # post '/users', to: 'users#create'
