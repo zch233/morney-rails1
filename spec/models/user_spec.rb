@@ -12,4 +12,8 @@ RSpec.describe User, type: :model do
       User.destroy user.id
     }.to change { User.count }.by(-1)
   end
+  it '创建时必须要填邮箱' do
+    user = User.create password: '123456', password_confirmation: '123456'
+    expect(user.errors.details[:email][0][:error]).to eq(:blank)
+  end
 end
