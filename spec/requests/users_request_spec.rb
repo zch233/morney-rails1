@@ -12,4 +12,8 @@ RSpec.describe "Users", type: :request do
     expect(body['errors']['password_confirmation'][0]).to eq '确认密码不能为空'
     expect(body['errors']['password_confirmation'].length).to eq 1
   end
+  it '未登录无法得到个人信息' do
+    get '/current_user_info'
+    expect(response).to have_http_status 401
+  end
 end
