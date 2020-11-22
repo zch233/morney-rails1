@@ -15,13 +15,16 @@ RSpec.describe "Users", type: :request do
   it '未登录无法得到个人信息' do
     get '/current_user_info'
     expect(response).to have_http_status 401
+    expect(response.body.blank?).to eq true
   end
   it '登录以后可以得到个人信息' do
-    user = post '/users', params: { email: '1@qq.com', password: '123456', password_confirmation: '123456' }
-    session = post '/sessions', params: { email: '1@qq.com', password: '123456' }
-    p user
-    p session
+    post '/users', params: { email: '1@qq.com', password: '123456', password_confirmation: '123456' }
+    user = JSON.parse response.body
+    post '/sessions', params: { email: '1@qq.com', password: '123456' }
+    JSON.parse response.body
     get '/current_user_info'
-    expect(user.id).to eq session.id
+    body = JSON.parse response.body
+    expect(response).to have_http_status :ok
+    expect(user['resource']['id']).to eq body['resource']['id']
   end
 end
