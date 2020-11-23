@@ -16,6 +16,10 @@ RSpec.describe User, type: :model do
     user = User.create password: '123456', password_confirmation: '123456'
     expect(user.errors.details[:email][0][:error]).to eq(:blank)
   end
+  it '创建时必须要填邮箱-为空也不行' do
+    user = User.create email: '', password: '123456', password_confirmation: '123456'
+    expect(user.errors.details[:email][0][:error]).to eq(:blank)
+  end
   it '创建时邮箱要符合格式' do
     user = User.create email: '1111', password: '123456', password_confirmation: '123456'
     expect(user.errors.details[:email][0][:error]).to eq(:invalid)
