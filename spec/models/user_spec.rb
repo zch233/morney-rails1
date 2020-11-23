@@ -24,6 +24,10 @@ RSpec.describe User, type: :model do
     user = User.create email: '1@qq.com', password_confirmation: '123456'
     expect(user.errors.details[:password][0][:error]).to eq(:blank)
   end
+  it '创建时密码要符合格式' do
+    user = User.create email: '1@qq.com', password: '111', password_confirmation: '123456'
+    expect(user.errors.details[:password][0][:error]).to eq(:too_short)
+  end
   it '创建时必须要填确认密码' do
     user = User.create email: '1@qq.com', password: '123456'
     expect(user.errors.details[:password_confirmation][0][:error]).to eq(:blank)
