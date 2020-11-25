@@ -11,4 +11,10 @@ resource "Users" do
       expect(status).to eq 200
     end
   end
+  get "/users" do
+    example "获取用户列表" do
+      do_request
+      expect(status).to eq 200
+    end
+  end
 end
