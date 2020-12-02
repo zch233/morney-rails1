@@ -7,4 +7,11 @@ RSpec.describe "Records", type: :request do
     body = JSON.parse(response.body)
     expect(body['resource']['id']).to be_a Numeric
   end
+  it '可以创建一条记录-参数为空' do
+    post '/records', params: {}
+    expect(response.status).to eq 422
+    body = JSON.parse response.body
+    expect(body['errors']['amount'][0]).to be '金额不能为空'
+    expect(body['errors']['category'][0]).to be '类型不能为空'
+  end
 end
