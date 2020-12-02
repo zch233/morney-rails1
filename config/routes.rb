@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # delete '/users/:id', to: 'users#destroy'
   # patch '/users/:id', to: 'users#update'
   resources :users
+  resources :records
   delete 'sessions', to: 'sessions#destroy'
   resources :sessions, only: [:create]
 end
