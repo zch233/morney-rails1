@@ -30,3 +30,9 @@ bin/rails s
 ```
 bin/rails g controller users
 ```
+
+## 生成 API 文档
+```
+rake docs:generate
+start/open doc/api/index.html
+```
