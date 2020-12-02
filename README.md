@@ -37,6 +37,6 @@ bin/rails generate rspec:controller users
 ```
 ## 生成 API 文档
 ```
-rake docs:generate
-start/open doc/api/index.html
+bin/rake docs:generate
+start doc/api/index.html
 ```
