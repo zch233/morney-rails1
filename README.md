@@ -30,7 +30,11 @@ bin/rails s
 ```
 bin/rails g controller users
 ```
-
+## 生成测试文件
+```
+bin/rails generate rspec:model users
+bin/rails generate rspec:controller users
+```
 ## 生成 API 文档
 ```
 rake docs:generate
