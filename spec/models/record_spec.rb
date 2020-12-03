@@ -11,7 +11,7 @@ RSpec.describe Record, type: :model do
   end
   it '创建时类型只能是 outgoings | income' do
     expect {
-      Record.create amount: 10000, category: 'outgoings', notes: '测试的备注'
+      Record.create amount: 10000, category: 'xxx', notes: '测试的备注'
     }.to raise_error(ArgumentError)
   end
 end
