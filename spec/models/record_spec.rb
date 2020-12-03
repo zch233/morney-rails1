@@ -9,4 +9,9 @@ RSpec.describe Record, type: :model do
     record = Record.create amount: 10000, notes: '测试的备注'
     expect(record.errors.details[:category][0][:error]).to eq(:blank)
   end
+  it '创建时类型只能是 outgoings | income' do
+    expect {
+      Record.create amount: 10000, category: 'outgoings', notes: '测试的备注'
+    }.to raise_error(ArgumentError)
+  end
 end
