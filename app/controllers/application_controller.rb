@@ -1,4 +1,13 @@
+require 'custom_error'
+
 class ApplicationController < ActionController::API
+  rescue_from CustomError::MustSignIn, with: :render_must_sign_in
+
+  def must_sign_in
+    if current_user.nil?
+      raise CustomError::MustSignIn
+    end
+  end
   def current_user
     current_user ||= User.find_by_id session[:current_user_id]
   end
@@ -9,5 +18,8 @@ class ApplicationController < ActionController::API
     else
       render json: { errors: resource.errors }, status: 422
     end
+  end
+  def render_must_sign_in
+    render status: :unauthorized
   end
 end
