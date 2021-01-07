@@ -109,7 +109,7 @@ table th, table td {
       <h1>Records API</h1>
 
       <div class="article">
-        <h2>创建用户</h2>
+        <h2>创建一条记录</h2>
         <h3>POST /records</h3>
 
           <h3>Parameters</h3>
@@ -153,7 +153,7 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: </pre>
+Cookie: _monery_session_id=GxybUPUmVqdA%2FZxF7xgG6VBNgCPD%2BvH7fMIxAyvIaDtREeXTDVsqG%2BYUkK6XxmPNSfjxpsKY0ctdz1f1L%2B3mK5mzBN0XJcrhLbtZTMrDAJC7wsaEu%2FaCWXU5Fp46lZrLXuIr5MuQc%2B0lB8gl9HaDj5hzkFCyaCP4roBliauOilqE2VtFUY%2FUxY6MGsS12XEFJqfE0EiW%2FpJIuSov0GIToVMbzfZJgO3yZ71H38F%2B0XcDeyzxPaGh6LDD--mhvrAckaGxlsK1QP--0GIC3nqiEnO3Q9irhB8yfQ%3D%3D</pre>
 
           <h4>Route</h4>
           <pre class="request route highlight">POST /records</pre>
@@ -165,18 +165,19 @@ Cookie: </pre>
 
             <h3>Response</h3>
               <h4>Headers</h4>
-              <pre class="response headers">Content-Type: application/json; charset=utf-8</pre>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+Set-Cookie: _monery_session_id=pdfp10cM75pFC1Bd1S61ndgeA9oPK0mNjkeobok%2FIKoh2oa5hMv9X5%2B3TAvOY%2BvUCJQyquopu5wL3TYejbcxKYt0ICtcjd2nCpk%2FxdY7ZzxFiz8r%2BrFDrR6zSyaFmZC8vFXyCMdSoUAYesCxqNI3ayhB1S0sfrNLrXiFxm12ryslx5Febh31sjgQvgu4pegHgntxG0KvSVKumhFuKKxU%2F%2FpsKn1eA8p4KnlcBDL7IPYwfKLa5emLxrd6--bAgZzISQG8XR5hzG--DV9w12lE94dVymhNlbAVTg%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;resource&quot;: {
-    &quot;id&quot;: 27,
+    &quot;id&quot;: 48,
     &quot;amount&quot;: 10000,
-    &quot;category&quot;: 0,
+    &quot;category&quot;: &quot;outgoings&quot;,
     &quot;notes&quot;: &quot;聚会&quot;,
-    &quot;created_at&quot;: &quot;2020-12-02T13:10:52.194Z&quot;,
-    &quot;updated_at&quot;: &quot;2020-12-02T13:10:52.194Z&quot;
+    &quot;created_at&quot;: &quot;2021-01-07T12:52:27.450Z&quot;,
+    &quot;updated_at&quot;: &quot;2021-01-07T12:52:27.450Z&quot;
   }
 }</pre>
       </div>
