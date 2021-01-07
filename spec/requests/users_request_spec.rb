@@ -25,13 +25,10 @@ RSpec.describe "Users", type: :request do
     expect(response.body.blank?).to eq true
   end
   it '登录以后可以得到个人信息' do
-    post '/users', params: { email: '1@qq.com', password: '123456', password_confirmation: '123456' }
-    user = JSON.parse response.body
-    post '/sessions', params: { email: '1@qq.com', password: '123456' }
-    JSON.parse response.body
+    user = sign_in
     get '/current_user_info'
     body = JSON.parse response.body
     expect(response).to have_http_status :ok
-    expect(user['resource']['id']).to eq body['resource']['id']
+    expect(user.id).to eq body['resource']['id']
   end
 end
