@@ -16,14 +16,14 @@ bin/rails -T
 bin/rails db:create
 bin/rails db:drop
 ```
-## 数据迁移
-```
-bin/rails db:migrate
-```
 ## 使用 rails 创建 User 表和 Modal
 ```
 bin/rails g model User
 bin/rails g model User email:string password_digest:string
+```
+## 数据迁移
+```
+bin/rails db:migrate
 ```
 
 ## 运行
