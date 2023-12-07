@@ -6,6 +6,10 @@ docker run --name=psql2 -v morney-rails1-data:/var/lib/postgresql/data -p 5001:5
 docker run --name=psql2 -v ./morney-rails1-data:/var/lib/postgresql/data -p 5001:5432 -e POSTGRES_USER=morney -e POSTGRES_PASSWORD=123456 -d postgres:12.2
 
 # 这注意这里的 --name 和 -v后面的本地路径，每次创建新的容器的时候最好换一下
+# morney-rails1-data 是数据库目录名，可以替换为任意目录名，也可以替换为绝对路径
+# 5001 是数据库端口名，可以随意替换，但要确保 database.yml 也作对应修改
+# POSTGRES_USER 是用户名，可以随意替换，但要确保 database.yml 也作对应修改
+# POSTGRES_PASSWORD 是密码，可以随意替换，但要确保 database.yml 也作对应修改
 ```
 ## 查看 Rails 有哪些命令
 ```
