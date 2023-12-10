@@ -30,6 +30,15 @@ bin/rails g model User email:string password_digest:string
 bin/rails db:migrate
 ```
 
+## 命令行查看数据库
+```
+docker ps
+docker exec -it 容器id bash
+psql -U username
+\c 数据库名字
+select * form users;
+```
+
 ## 运行
 ```
 bin/rails s
